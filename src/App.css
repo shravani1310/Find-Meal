@@ -1,38 +1,249 @@
 .App {
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+.nav-bar{
+  background-color: #ffa73bc6;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  display: flex;
+}
+.nav-bar h1{
+  text-align: left;
+  margin: 10px 100px;
+  
+}
+.nav-bar ul{
+  list-style: none;
+  margin: 0;
+  display: flex;
+  margin-left: 600px;
+  margin-top: 10px;
+}
+.nav-bar li {
+  margin: 0 20px;
+}
+.nav-bar li a{
+  text-decoration: none;
+  color: #000000;
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+.nav-bar li a:hover{
+  font-size: 17px;
+  text-decoration: underline;
+  transform: translateY(-5px); /* Slightly move the link upwards (floating effect) */
+}
+.nav-bar li a.active{
+  font-size: 17px;
+  text-decoration: underline;
+  transform: none;
+}
+.search-box {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  transition: width 0.4s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-box:focus {
+  width: 250px; /* Expand the input when focused */
+  outline: none; /* Remove outline on focus */
+  border-color: #ff6347; /* Change border color on focus */
+}
+.card-container{
+  display: inline;
+  justify-content: flex-start;
+ align-items: flex-start;
+  
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ align-items: center;
+  margin: 50px;
+}
+.card{
+  background-color: #8e006d;
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  height:300px;
+  width: 200px;
+  object-position: center;
+  border-radius: 10%;
+  object-fit: contain;
+  overflow: hidden;
+}
+.card img{
+  width: 100%;
+  position: relative;
+
+  
+}
+.recipename{
+  text-align: start;
+}
+.card h2{
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  text-align: start;
+  color: #ffffff;
+}
+.card button{
+  background-color: white;
+  color: #8e006d;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  border: none;
+  margin: 10px 0px 10px 10px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-header {
+.pagination span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+.page {
+  display: flex; /* Use flexbox to align items in a row */
+  align-items: top; /* Center items vertically */
+  justify-content: space-around; /* Space items evenly */
+  padding: 20px; /* Add some padding */
+}
+
+.page img {
+  width: 35%; /* Set image width to 50% */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 20px;
+  border-radius: 10%;
+}
+
+
+.details {
+  width: 50%; /* Set width of details section */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: start;
+  display: flex;
+  display: inline-block;
+}
+
+.details h1 {
+  font-size: 2rem; /* Increase font size for recipe name */
+  margin-bottom: 20px; /* Add space below the title */
+}
+.details p{
+  font-size: 26px;
+  margin: 10px 0 0 10px;
+  font-weight: bold;
+}
+.details span {
+  font-size: 22px; /* Set font size for description */
+  line-height: 1.5; /* Improve readability with line height */
+  margin-left: 5px; /* Adds a small space between label and content */
+  word-wrap: break-word; /* Wrap long content to the next line */
+  max-width: 600px;
+  font-weight: normal;
+}
+.separator{
+  height: 500px;
+  width: 1px;
   background-color: #282c34;
-  min-height: 100vh;
+}
+.home{
+  width: 100%;
+  height: 400px;
+  margin-top: 0;
+  background-image: url("./header_bg.jpg");
+  background-size: 100%;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header{
+  width: 100%;
+  height: fit-content;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8e006df0;
+}
+.home_content{
+  width: 100%;
+  align-items: center; 
+  justify-content: center;
+  display: inline;
+  text-align: center;
+
+
+}
+.home_content ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+.home_content li{
+  margin-top: 30px;
+  display: flex; /* Use flexbox to align text and image in a row */
+  align-items: center; /* Vertically center text and image */
+  justify-content: center;/* Align items to the left */
+  margin-bottom: 15px; /* Space between each list item */
+  padding: 10px; /* Add padding for better spacing */
+  background-color: #8e006df0;
   color: white;
+  width: 50%;
+  border-radius: 10px;
+}
+.home_content li:nth-child(odd) {
+  transform: translateX(-20px); }
+
+.home_content li:nth-child(even) {
+  transform: translateX(20px);
 }
 
-.App-link {
-  color: #61dafb;
+li img {
+  width: 250px; /* Set image width */
+  height: 300px; /* Set image height */
+  margin-left: 100px; /* Add space between the text and the image */
+  box-sizing: border-box;
+  border-radius: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li span {
+  font-size: 20px; /* Set font size for the text */
+   /* Make the text fill remaining space */
+   text-align: start;
+   margin-left: 20px;
+   font-weight: bold;
+
+}
+.filter-container{
+  display: flex;
+  margin-left: 20px;
+}
+.filter{
+  width: fit-content;
+  margin: 10px;
 }
